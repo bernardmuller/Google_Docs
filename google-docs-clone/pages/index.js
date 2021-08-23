@@ -3,8 +3,15 @@ import Header from '../components/Header/Header'
 import Button from "@material-tailwind/react/Button";
 import Icon from "@material-tailwind/react/Icon";
 import Image from "next/image"
+import { getSession, useSession  } from 'next-auth/client';
+import Login from '../components/Login';
 
-export default function Home() {
+function Home() {
+  
+  const [session] = useSession();
+
+  if(!session) return <Login />
+
   return (
     <div>
       <Head>
@@ -24,7 +31,7 @@ export default function Home() {
           {/* New Document - Component*/}
           <div className="max-w-3xl mx-auto">
 
-            {/* Start New Dosument text and Button - subcomponent*/}
+            {/* Start New Document text and Button - subcomponent*/}
             <div className='py-6 flex items-center justify-between'>
               <h2 className='text-gray-700 text-lg'>Start a new document</h2>
               <Button
@@ -70,3 +77,6 @@ export default function Home() {
     </div>
   )
 }
+
+
+export default Home;

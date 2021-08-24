@@ -1,3 +1,5 @@
+import firebase from "firebase";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBgtNj1LkCzraaBMegnGyXCZM9a0bVQlV8",
   authDomain: "docs-clone-e1587.firebaseapp.com",
